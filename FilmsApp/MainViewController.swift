@@ -11,8 +11,8 @@ class MainViewController: UIViewController {
     
     var testArray:[TestModel] = [
 
-        TestModel(testPic: "image1", testTitle: "Фильм 1", testYear: "2001", testRating: "4.7"),
-        TestModel(testPic: "image2", testTitle: "Фильм 2", testYear: "2004", testRating: "4.9"),
+        TestModel(testPic: "image1", testTitle: "Служебный роман", testYear: "1977", testRating: "4.7"),
+        TestModel(testPic: "image2", testTitle: "Mr.Right", testYear: "2015", testRating: "4.9"),
         TestModel(testPic: "image3", testTitle: "Фильм 3", testYear: "2011", testRating: "5.8"),
         TestModel(testPic: "image4", testTitle: "Фильм 4", testYear: "2017", testRating: "3.2"),
         TestModel(testPic: "image5", testTitle: "Фильм 5", testYear: "2000", testRating: "4.3"),
@@ -55,8 +55,11 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         
         cell.posterPreviewImageView.image = UIImage(named: testArray[indexPath.row].testPic ?? "")
+        cell.posterPreviewImageView.layer.cornerRadius = 15
         cell.filmTitleLabel.text = testArray[indexPath.row].testTitle
+        cell.releaseTitleLabel.text = testArray[indexPath.row].testYear
         cell.ratingLabel.text = testArray[indexPath.row].testRating
+        
         
         
         return cell
