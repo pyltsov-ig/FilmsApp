@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		653D6DC526F5CACF00AFDF46 /* FilmCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653D6DC426F5CACF00AFDF46 /* FilmCollectionViewCell.xib */; };
 		6546ADB126EC98C90097523C /* FilmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546ADB026EC98C90097523C /* FilmCollectionViewCell.swift */; };
 		65543E4E26E219B400D702D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65543E4D26E219B400D702D0 /* AppDelegate.swift */; };
 		65543E5026E219B400D702D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65543E4F26E219B400D702D0 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		653D6DC426F5CACF00AFDF46 /* FilmCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCollectionViewCell.xib; sourceTree = "<group>"; };
 		6546ADB026EC98C90097523C /* FilmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCollectionViewCell.swift; sourceTree = "<group>"; };
 		65543E4A26E219B400D702D0 /* FilmsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65543E4D26E219B400D702D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				65543E5826E219B500D702D0 /* LaunchScreen.storyboard */,
 				65543E5B26E219B500D702D0 /* Info.plist */,
 				65543E6926E22C9600D702D0 /* JSONModel.swift */,
+				653D6DC426F5CACF00AFDF46 /* FilmCollectionViewCell.xib */,
 			);
 			path = FilmsApp;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				65543E5A26E219B500D702D0 /* LaunchScreen.storyboard in Resources */,
 				65543E5726E219B500D702D0 /* Assets.xcassets in Resources */,
+				653D6DC526F5CACF00AFDF46 /* FilmCollectionViewCell.xib in Resources */,
 				65543E5526E219B400D702D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
