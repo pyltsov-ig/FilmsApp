@@ -29,8 +29,9 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-k2-8Od" userLabel="Rating Label">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-k2-8Od" userLabel="Rating Label">
                         <rect key="frame" x="90" y="32" width="49" height="29.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="27"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,9 +46,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="8TH-dc-5gD" secondAttribute="trailing" constant="19" id="2xJ-hD-zwq"/>
-                    <constraint firstItem="Tjd-k2-8Od" firstAttribute="top" secondItem="Pux-tG-pEv" secondAttribute="top" constant="32" id="6mS-Gz-sla"/>
                     <constraint firstItem="DE6-yZ-0qH" firstAttribute="leading" secondItem="Pux-tG-pEv" secondAttribute="leading" constant="21" id="8oW-Gl-TEA"/>
-                    <constraint firstAttribute="trailing" secondItem="Tjd-k2-8Od" secondAttribute="trailing" constant="36" id="GzC-If-Bks"/>
+                    <constraint firstAttribute="bottom" secondItem="8TH-dc-5gD" secondAttribute="bottom" constant="87" id="K5f-7t-0bt"/>
                     <constraint firstItem="8TH-dc-5gD" firstAttribute="leading" secondItem="Pux-tG-pEv" secondAttribute="leading" constant="20" id="aZv-kc-mu3"/>
                     <constraint firstItem="8TH-dc-5gD" firstAttribute="top" secondItem="Pux-tG-pEv" secondAttribute="top" constant="21" id="eSO-Tc-Mkk"/>
                     <constraint firstAttribute="trailing" secondItem="DE6-yZ-0qH" secondAttribute="trailing" constant="79" id="f2I-az-yev"/>
@@ -55,7 +55,6 @@
                     <constraint firstAttribute="trailing" secondItem="ETa-5q-Su5" secondAttribute="trailing" constant="21" id="iDK-zF-a0p"/>
                     <constraint firstItem="ETa-5q-Su5" firstAttribute="top" secondItem="8TH-dc-5gD" secondAttribute="bottom" constant="8" id="jeA-IH-DUu"/>
                     <constraint firstItem="DE6-yZ-0qH" firstAttribute="top" secondItem="ETa-5q-Su5" secondAttribute="bottom" constant="8.5" id="jhQ-hs-kPZ"/>
-                    <constraint firstItem="Tjd-k2-8Od" firstAttribute="leading" secondItem="Pux-tG-pEv" secondAttribute="leading" constant="90" id="uAo-uH-iOz"/>
                 </constraints>
             </collectionViewCellContentView>
             <color key="backgroundColor" red="0.81724418492469908" green="1" blue="0.73146514621293557" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
