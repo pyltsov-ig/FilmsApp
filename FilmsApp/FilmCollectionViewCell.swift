@@ -8,9 +8,16 @@
 import UIKit
 
 class FilmCollectionViewCell: UICollectionViewCell {
+//    @IBOutlet weak var posterPreviewImageView: UIImageView!
+//    @IBOutlet weak var filmTitleLabel: UILabel!
+//    @IBOutlet weak var releaseTitleLabel: UILabel!
+//    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var posterPreviewImageView: UIImageView!
-    @IBOutlet weak var filmTitleLabel: UILabel!
+    
     @IBOutlet weak var releaseTitleLabel: UILabel!
+    
     @IBOutlet weak var ratingLabel: UILabel!
+    
+    @IBOutlet weak var filmTitleLabel: UILabel!
     
 }
