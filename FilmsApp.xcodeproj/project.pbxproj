@@ -20,6 +20,7 @@
 		65543E6626E2224F00D702D0 /* FullPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65543E6526E2224F00D702D0 /* FullPicViewController.swift */; };
 		65543E6826E2227700D702D0 /* FavoriteFilmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65543E6726E2227700D702D0 /* FavoriteFilmsViewController.swift */; };
 		65543E6A26E22C9600D702D0 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65543E6926E22C9600D702D0 /* JSONModel.swift */; };
+		6559D8492700D9D5000FC4ED /* PosterFullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6559D8482700D9D5000FC4ED /* PosterFullViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		65543E6526E2224F00D702D0 /* FullPicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPicViewController.swift; sourceTree = "<group>"; };
 		65543E6726E2227700D702D0 /* FavoriteFilmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFilmsViewController.swift; sourceTree = "<group>"; };
 		65543E6926E22C9600D702D0 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
+		6559D8482700D9D5000FC4ED /* PosterFullViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterFullViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		65543E4C26E219B400D702D0 /* FilmsApp */ = {
 			isa = PBXGroup;
 			children = (
+				6559D8482700D9D5000FC4ED /* PosterFullViewController.swift */,
 				65543E4D26E219B400D702D0 /* AppDelegate.swift */,
 				65543E4F26E219B400D702D0 /* SceneDelegate.swift */,
 				65543E5126E219B400D702D0 /* MainViewController.swift */,
@@ -165,6 +168,7 @@
 				65543E4E26E219B400D702D0 /* AppDelegate.swift in Sources */,
 				65543E5026E219B400D702D0 /* SceneDelegate.swift in Sources */,
 				65543E6A26E22C9600D702D0 /* JSONModel.swift in Sources */,
+				6559D8492700D9D5000FC4ED /* PosterFullViewController.swift in Sources */,
 				6546ADB126EC98C90097523C /* FilmCollectionViewCell.swift in Sources */,
 				65543E6426E2223000D702D0 /* FilmPicsViewController.swift in Sources */,
 				65543E6226E2221300D702D0 /* DetailFilmViewController.swift in Sources */,
