@@ -20,5 +20,8 @@ class PosterFullViewController: UIViewController {
 
        
     }
+    @IBAction func closePoster(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
