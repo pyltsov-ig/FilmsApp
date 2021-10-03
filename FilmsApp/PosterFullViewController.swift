@@ -13,12 +13,20 @@ class PosterFullViewController: UIViewController {
     
     @IBOutlet weak var posterFullViewImage: UIImageView!
     
+    var detailIndexPath:Int = Int()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        posterFullViewImage.image = UIImage(named: testArray[detailIndexPath].testPic ?? "image1")
 
        
+    }
+    @IBAction func closeAction(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
     }
     
 }

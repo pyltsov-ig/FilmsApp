@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xzq-0s-8w6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RuX-Wb-Adg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -83,6 +83,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-f1-pYl">
                                 <rect key="frame" x="345" y="20" width="30" height="30"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="bcw-3B-xRR" eventType="touchUpInside" id="Xkh-hc-8vr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hho-5Q-6lr"/>
@@ -109,7 +112,7 @@
         <!--Detail Film View Controller-->
         <scene sceneID="qf3-Ke-JPe">
             <objects>
-                <viewController id="xzq-0s-8w6" customClass="DetailFilmViewController" customModule="FilmsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailFilmViewControllerS" id="xzq-0s-8w6" customClass="DetailFilmViewController" customModule="FilmsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UqB-3T-NB2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +224,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Irj-Qs-wVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="zQr-2h-TWC">
+                <tapGestureRecognizer id="zQr-2h-TWC">
                     <connections>
                         <action selector="tapGestureAction:" destination="xzq-0s-8w6" id="fFn-zs-YG3"/>
                         <outlet property="delegate" destination="UqB-3T-NB2" id="fng-a8-Vlm"/>
@@ -235,7 +238,7 @@
         <scene sceneID="78h-ja-iLI">
             <objects>
                 <viewController id="ngm-cG-ksi" customClass="FilmPicsViewController" customModule="FilmsApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="g4W-Qd-5bk">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="DetailFilmViewControllerS" id="g4W-Qd-5bk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vGY-Td-dai"/>

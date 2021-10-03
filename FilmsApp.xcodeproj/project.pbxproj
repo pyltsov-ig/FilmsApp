@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		653C7C4227060CAB0010A998 /* RoundingTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C7C4127060CAB0010A998 /* RoundingTransition.swift */; };
 		653D6DC526F5CACF00AFDF46 /* FilmCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653D6DC426F5CACF00AFDF46 /* FilmCollectionViewCell.xib */; };
 		6546ADB126EC98C90097523C /* FilmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546ADB026EC98C90097523C /* FilmCollectionViewCell.swift */; };
 		65543E4E26E219B400D702D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65543E4D26E219B400D702D0 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		653C7C4127060CAB0010A998 /* RoundingTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundingTransition.swift; sourceTree = "<group>"; };
 		653D6DC426F5CACF00AFDF46 /* FilmCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCollectionViewCell.xib; sourceTree = "<group>"; };
 		6546ADB026EC98C90097523C /* FilmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCollectionViewCell.swift; sourceTree = "<group>"; };
 		65543E4A26E219B400D702D0 /* FilmsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 				65543E5B26E219B500D702D0 /* Info.plist */,
 				65543E6926E22C9600D702D0 /* JSONModel.swift */,
 				653D6DC426F5CACF00AFDF46 /* FilmCollectionViewCell.xib */,
+				653C7C4127060CAB0010A998 /* RoundingTransition.swift */,
 			);
 			path = FilmsApp;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653C7C4227060CAB0010A998 /* RoundingTransition.swift in Sources */,
 				65543E6826E2227700D702D0 /* FavoriteFilmsViewController.swift in Sources */,
 				65543E6626E2224F00D702D0 /* FullPicViewController.swift in Sources */,
 				65543E5226E219B400D702D0 /* MainViewController.swift in Sources */,
