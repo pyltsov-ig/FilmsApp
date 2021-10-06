@@ -20,7 +20,7 @@ class RoundingTransition: NSObject {
     
     var roundColor = UIColor.red
     
-    var time = 2.0
+    var time = 1.0
     
     enum RoundingTransitionProfile: Int {
         case show, cancel, pop
@@ -47,10 +47,8 @@ extension RoundingTransition: UIViewControllerAnimatedTransitioning {
                 let viewCenter = showedView.center
                 let viewSize = showedView.frame.size
                 
-                //round = UIView()
-                
+                round = UIView()
                 round.frame = roundFrame(withViewCenter: viewCenter, size: viewSize, startPoint: start)
-                
                 round.layer.cornerRadius = round.frame.size.height / 2
                 round.center = start
                 round.backgroundColor = roundColor
@@ -61,6 +59,7 @@ extension RoundingTransition: UIViewControllerAnimatedTransitioning {
                 showedView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 showedView.alpha = 0
                 container.addSubview(showedView)
+                
                 
                 
                 UIView.animate(withDuration: time, animations:  {
@@ -118,7 +117,7 @@ extension RoundingTransition: UIViewControllerAnimatedTransitioning {
         let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
         let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
         
-        let offsetVector =  sqrt(xLength * xLength * yLength * yLength) * 2
+        let offsetVector =  sqrt(xLength * xLength + yLength * yLength) * 2
         let size = CGSize(width: offsetVector, height: offsetVector)
         
         return CGRect(origin: CGPoint.zero, size: size)

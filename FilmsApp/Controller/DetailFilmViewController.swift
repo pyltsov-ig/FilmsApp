@@ -35,7 +35,7 @@ class DetailFilmViewController: UIViewController, UIViewControllerTransitioningD
         
         transition.transitionProfile = .show
         transition.start = posterImageView.center
-        transition.roundColor  = UIColor.lightGray
+        //transition.roundColor  = UIColor.lightGray
         
         return transition
     }
@@ -43,7 +43,7 @@ class DetailFilmViewController: UIViewController, UIViewControllerTransitioningD
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionProfile = .cancel
         transition.start = posterImageView.center
-        transition.roundColor  = UIColor.lightGray
+        //transition.roundColor  = UIColor.lightGray
         
         return transition
 
@@ -63,6 +63,4 @@ class DetailFilmViewController: UIViewController, UIViewControllerTransitioningD
         destVC.modalPresentationStyle = .custom
         
     }
-    
-    
 }
