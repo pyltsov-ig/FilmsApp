@@ -56,11 +56,12 @@ class Model {
     
     var sortAscending:Bool = false
     
-    func ratingSort(){
+    func ratingSort() -> [Item]{
         self.testArray.sort {
             sortAscending ? ($0.testRating ?? 0) < ($1.testRating ?? 0) : ($0.testRating ?? 0) > ($1.testRating ?? 0)
         }
         newTestArray = testArray
+        return newTestArray
     }
     
     var likedArray:[Item] {
@@ -72,6 +73,16 @@ class Model {
             return likedArray
         }
     }
+    
+    func getItemIndex(id: Int) -> Int {
+        for i in 0..<testArray.count {
+            if testArray[i].id == id {
+                return i
+            }
+    }
+        return 0
+    }
+        
     
     
 }

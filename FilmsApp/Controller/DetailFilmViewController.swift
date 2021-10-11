@@ -16,6 +16,7 @@ class DetailFilmViewController: UIViewController, UIViewControllerTransitioningD
     @IBOutlet weak var galleryCollection: UILabel!
     
     var receivedIndex: Int = Int()
+    private var testArrayIndex = Int()
     
     var transition: RoundingTransition = RoundingTransition()
     
@@ -23,10 +24,12 @@ class DetailFilmViewController: UIViewController, UIViewControllerTransitioningD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        posterImageView.image = UIImage(named: testArray[receivedIndex].testPic ?? "image1")
-        filmTitleLabel.text = testArray[receivedIndex].testTitle
-        releaseYearLabel.text = testArray[receivedIndex].testYear
-        ratingLabel.text = testArray[receivedIndex].testRating
+        testArrayIndex = Model().getItemIndex(id: receivedIndex)
+        
+        posterImageView.image = UIImage(named: testArray[testArrayIndex].testPic ?? "image1")
+        filmTitleLabel.text = testArray[testArrayIndex].testTitle
+        releaseYearLabel.text = testArray[testArrayIndex].testYear
+        ratingLabel.text = testArray[testArrayIndex].testRating
         
 
     }
@@ -57,7 +60,7 @@ class DetailFilmViewController: UIViewController, UIViewControllerTransitioningD
         
         guard let destVC = segue.destination as? PosterFullViewController else {return}
         
-        destVC.detailIndexPath = receivedIndex
+        destVC.detailIndexPath = testArrayIndex
         
         destVC.transitioningDelegate = self
         destVC.modalPresentationStyle = .custom

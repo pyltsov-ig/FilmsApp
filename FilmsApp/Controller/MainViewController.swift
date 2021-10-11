@@ -55,13 +55,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.newTestArray.count
+        return model.ratingSort().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "FilmCell", for: indexPath) as? FilmCollectionViewCell else { return UICollectionViewCell()}
         
-        cell.data = self.model.newTestArray[indexPath.item]
+        cell.data = self.model.ratingSort()[indexPath.item]
 
         return cell
     }
@@ -70,7 +70,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         guard let destViewController = storyboard?.instantiateViewController(withIdentifier: "DetailFilmViewControllerS") as? DetailFilmViewController else {return}
         
-        destViewController.receivedIndex = model.newTestArray[indexPath.row].id ?? 0
+        destViewController.receivedIndex = model.ratingSort()[indexPath.row].id ?? 0
+
         navigationController?.pushViewController(destViewController, animated: true)
     }
     
