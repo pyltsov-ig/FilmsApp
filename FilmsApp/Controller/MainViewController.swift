@@ -12,43 +12,57 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
-    @IBOutlet weak var filmSearchBar: UISearchBar!
+    @IBOutlet weak var sortBtn: UIBarButtonItem!
+    
+    var searchController = UISearchController()
+    
+    var model = Model()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        model.newTestArray = model.testArray
+        
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
         
-        filmSearchBar.delegate = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Find Your Film"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         
         let xibCell = UINib(nibName: "FilmCollectionViewCell", bundle: nil)
         mainCollectionView.register(xibCell, forCellWithReuseIdentifier: "FilmCell")
+        
+        model.ratingSort()
         mainCollectionView.reloadData()
         
     }
     
+    @IBAction func sortBtnPressed(_ sender: UIBarButtonItem) {
+        let arrowUp = UIImage(systemName: "arrow.up")
+        let arrowDn = UIImage(systemName: "arrow.down")
+        model.sortAscending = !model.sortAscending
+        sortBtn.image = model.sortAscending ? arrowUp : arrowDn
+        model.ratingSort()
+        mainCollectionView.reloadData()
+        
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testArray.count
+        return model.newTestArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "FilmCell", for: indexPath) as? FilmCollectionViewCell else { return UICollectionViewCell()}
         
-        
-        cell.posterPreviewImageView.image = UIImage(named: testArray[indexPath.row].testPic ?? "")
-        cell.posterPreviewImageView.layer.cornerRadius = 15
-        cell.filmTitleLabel.text = testArray[indexPath.row].testTitle
-        cell.releaseTitleLabel.text = testArray[indexPath.row].testYear
-        cell.ratingLabel.text = testArray[indexPath.row].testRating
-        
-        
-        
+        cell.data = self.model.newTestArray[indexPath.item]
+
         return cell
     }
     
@@ -56,11 +70,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         guard let destViewController = storyboard?.instantiateViewController(withIdentifier: "DetailFilmViewControllerS") as? DetailFilmViewController else {return}
         
-        destViewController.receivedIndex = indexPath.row
+        destViewController.receivedIndex = model.newTestArray[indexPath.row].id ?? 0
         navigationController?.pushViewController(destViewController, animated: true)
     }
     
     
 }
-
 

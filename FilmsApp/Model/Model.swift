@@ -9,6 +9,7 @@ import Foundation
 
 
 class Model {
+    
     var testArray:[Item] = [
 
         Item(id: 1, testPic: "image1", testTitle: "Служебный роман", testYear: 1977, testRating: 4.7, isLiked: false),
@@ -20,11 +21,11 @@ class Model {
         Item(id: 7, testPic: "image7", testTitle: "Фильм 7", testYear: 1956, testRating: 7.9, isLiked: false),
         Item(id: 8, testPic: "image8", testTitle: "Фильм 8", testYear: 2001, testRating: 6.7, isLiked: false),
         Item(id: 9, testPic: "image9", testTitle: "Фильм 9", testYear: 2006, testRating: 3.7, isLiked: true),
-        Item(id: 10, testPic: "image10", testTitle: "Фильм 10", testYear: 2007, testRating: 7.7, isLiked: false),
+        Item(id: 10, testPic: "image10", testTitle: "Фильм 10", testYear: 2007, testRating: 9.9, isLiked: true),
         Item(id: 11, testPic: "image11", testTitle: "Фильм 11", testYear: 2018, testRating: 9.7, isLiked: false),
         Item(id: 12, testPic: "image12", testTitle: "Фильм 12", testYear: 2013, testRating: 7.1, isLiked: false),
         Item(id: 13, testPic: "image13", testTitle: "Фильм 13", testYear: 2002, testRating: 8.4, isLiked: false),
-        Item(id: 14, testPic: "image14", testTitle: "Фильм 14", testYear: 2014, testRating: 1.2, isLiked: false),
+        Item(id: 14, testPic: "image14", testTitle: "Фильм 14", testYear: 2014, testRating: 1.2, isLiked: true),
         Item(id: 15, testPic: "image15", testTitle: "Фильм 15", testYear: 2015, testRating: 4.8, isLiked: true),
     ]
     
@@ -41,6 +42,38 @@ class Model {
         
         return likedFilmsArray
     }
+    
+   
+    var newTestArray:[Item] = []
+    
+    /* так сортировку реализовывать не будем, хотя мне так нравится
+    var ratingSort: [Item] {
+        testArray.sort { $0.testRating ?? 0 > $1.testRating ?? 0 }
+        newTestArray = testArray
+        return newTestArray
+    }
+    */
+    
+    var sortAscending:Bool = false
+    
+    func ratingSort(){
+        self.testArray.sort {
+            sortAscending ? ($0.testRating ?? 0) < ($1.testRating ?? 0) : ($0.testRating ?? 0) > ($1.testRating ?? 0)
+        }
+        newTestArray = testArray
+    }
+    
+    var likedArray:[Item] {
+        get {
+            var likedArray = showLikedItems()
+            likedArray.sort {
+                $0.testRating ?? 0 > $1.testRating ?? 0
+            }
+            return likedArray
+        }
+    }
+    
+    
 }
 
 class Item {

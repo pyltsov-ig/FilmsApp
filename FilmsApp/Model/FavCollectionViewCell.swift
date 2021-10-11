@@ -15,4 +15,15 @@ class FavCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var filmTitleLabel: UILabel!
     
+    var data: Item? {
+        didSet {
+            guard data != nil else {
+                return
+            }
+            posterPreviewImageView.image = UIImage(named: data?.testPic ?? "image1")
+            filmTitleLabel.text = data?.testTitle
+            releaseTitleLabel.text = String(data?.testYear ?? 0)
+            ratingLabel.text = String(data?.testRating ?? 0)
+        }
+    }
 }

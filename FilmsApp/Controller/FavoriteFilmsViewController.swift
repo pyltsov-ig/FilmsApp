@@ -12,9 +12,12 @@ class FavoriteFilmsViewController: UIViewController {
     
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
     
+    var model = Model()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         favoriteCollectionView.delegate = self
         favoriteCollectionView.dataSource = self
@@ -23,6 +26,8 @@ class FavoriteFilmsViewController: UIViewController {
         favoriteCollectionView.register(xibCell, forCellWithReuseIdentifier: "FavCell")
         favoriteCollectionView.reloadData()
         
+        
+        
 
         
     }
@@ -30,18 +35,15 @@ class FavoriteFilmsViewController: UIViewController {
 
 extension FavoriteFilmsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        Model().showLikedItems().count
+        model.likedArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = favoriteCollectionView.dequeueReusableCell(withReuseIdentifier: "FavCell", for: indexPath) as? FavCollectionViewCell else {return UICollectionViewCell()}
         
-        cell.posterPreviewImageView.image = UIImage(named: Model().showLikedItems()[indexPath.row].testPic ?? "image2")
-        cell.posterPreviewImageView.layer.cornerRadius  = 15
-        cell.filmTitleLabel.text = Model().showLikedItems()[indexPath.row].testTitle
-        cell.releaseTitleLabel.text = String(Model().showLikedItems()[indexPath.row].testYear ?? 0)
-        cell.ratingLabel.text = String(Model().showLikedItems()[indexPath.row].testRating ?? 0)
+        
+        cell.data = self.model.likedArray[indexPath.row]
         
         return cell
     }
