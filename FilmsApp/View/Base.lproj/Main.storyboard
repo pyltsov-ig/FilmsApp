@@ -43,6 +43,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FilmsApp" id="vMM-fG-cfP">
+                        <barButtonItem key="leftBarButtonItem" image="heart.fill" catalog="system" style="plain" id="Non-KY-jlO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rXs-Pb-8qc">
+                                <rect key="frame" x="20" y="7" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" image="heart.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9XJ-1C-6PM" kind="show" id="Bns-NT-pUb"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.down" catalog="system" id="5x1-H5-siT">
                             <connections>
                                 <action selector="sortBtnPressed:" destination="BYZ-38-t0r" id="TZV-H9-9c6"/>
@@ -67,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rCa-oQ-rpO">
-                                <rect key="frame" x="20" y="138" width="374" height="724"/>
+                                <rect key="frame" x="20" y="182" width="374" height="680"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iNg-kO-B9N">
                                     <size key="itemSize" width="128" height="128"/>
@@ -78,7 +92,7 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Любимые фильмы " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGf-A6-Uz3">
-                                <rect key="frame" x="20" y="61" width="374" height="52"/>
+                                <rect key="frame" x="20" y="105" width="374" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="xem-jf-dB1"/>
                                 </constraints>
@@ -99,6 +113,7 @@
                             <constraint firstItem="rCa-oQ-rpO" firstAttribute="leading" secondItem="oS8-cL-Lvo" secondAttribute="leading" constant="20" id="tZ4-6v-6rf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OMs-e3-ge2"/>
                     <connections>
                         <outlet property="favoriteCollectionView" destination="rCa-oQ-rpO" id="jAP-N1-vOz"/>
                     </connections>
@@ -322,12 +337,16 @@
     </scenes>
     <resources>
         <image name="arrow.down" catalog="system" width="120" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="image1" width="411" height="617"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

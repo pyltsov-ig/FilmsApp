@@ -75,6 +75,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         navigationController?.pushViewController(destViewController, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let destVC = segue.destination as? FavoriteFilmsViewController else {return}
+        
+        
+    }
     
 }
 
