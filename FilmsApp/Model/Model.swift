@@ -79,7 +79,7 @@ class Model {
             if testArray[i].id == id {
                 return i
             }
-    }
+        }
         return 0
     }
         

@@ -45,7 +45,7 @@
                     <navigationItem key="navigationItem" title="FilmsApp" id="vMM-fG-cfP">
                         <barButtonItem key="leftBarButtonItem" image="heart.fill" catalog="system" style="plain" id="Non-KY-jlO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rXs-Pb-8qc">
-                                <rect key="frame" x="20" y="7" width="22" height="22"/>
+                                <rect key="frame" x="20" y="0.0" width="25.5" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
