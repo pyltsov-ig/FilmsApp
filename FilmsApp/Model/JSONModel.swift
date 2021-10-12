@@ -29,7 +29,7 @@ class TestModel {
         self.testRating = testRating
     }
 }
-
+/*
 var testArray:[TestModel] = [
 
     TestModel(testPic: "image1", testTitle: "Служебный роман", testYear: "1977", testRating: "4.7"),
@@ -49,3 +49,4 @@ var testArray:[TestModel] = [
     TestModel(testPic: "image15", testTitle: "Фильм 15", testYear: "2015", testRating: "4.8"),
 
 ]
+*/

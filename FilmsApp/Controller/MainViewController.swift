@@ -11,17 +11,14 @@ class MainViewController: UIViewController {
     
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
-    
     @IBOutlet weak var sortBtn: UIBarButtonItem!
     
     var searchController = UISearchController()
     
-    var model = Model()
+   // var model = Model()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        model.newTestArray = model.testArray
         
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
@@ -41,6 +38,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func sortBtnPressed(_ sender: UIBarButtonItem) {
+        
         let arrowUp = UIImage(systemName: "arrow.up")
         let arrowDn = UIImage(systemName: "arrow.down")
         model.sortAscending = !model.sortAscending
@@ -51,29 +49,46 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.ratingSort().count
+        
+        return model.newTestArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "FilmCell", for: indexPath) as? FilmCollectionViewCell else { return UICollectionViewCell()}
         
-        cell.data = self.model.ratingSort()[indexPath.item]
+        cell.data = model.newTestArray[indexPath.row]
 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let destViewController = storyboard?.instantiateViewController(withIdentifier: "DetailFilmViewControllerS") as? DetailFilmViewController else {return}
+        guard let destVC = storyboard?.instantiateViewController(withIdentifier: "DetailFilmViewControllerS") as? DetailFilmViewController else {return}
         
-        destViewController.receivedIndex = model.ratingSort()[indexPath.row].id ?? 0
-
-        navigationController?.pushViewController(destViewController, animated: true)
+        
+        destVC.receivedIndex = model.newTestArray[indexPath.row].id ?? 0
+        navigationController?.pushViewController(destVC, animated: true)
     }
         
+}
+
+extension MainViewController:  UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        model.search(searchTextValue: searchText)
+        mainCollectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        model.newTestArray = model.testArray
+        mainCollectionView.reloadData()
+    }
+    
 }
 

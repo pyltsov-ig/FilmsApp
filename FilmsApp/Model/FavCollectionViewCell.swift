@@ -8,11 +8,10 @@
 import UIKit
 
 class FavCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var posterPreviewImageView: UIImageView!
     @IBOutlet weak var releaseTitleLabel: UILabel!
-    
     @IBOutlet weak var ratingLabel: UILabel!
-    
     @IBOutlet weak var filmTitleLabel: UILabel!
     
     var data: Item? {

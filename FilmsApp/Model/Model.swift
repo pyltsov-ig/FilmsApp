@@ -56,12 +56,12 @@ class Model {
     
     var sortAscending:Bool = false
     
-    func ratingSort() -> [Item]{
+    func ratingSort(){
         self.testArray.sort {
             sortAscending ? ($0.testRating ?? 0) < ($1.testRating ?? 0) : ($0.testRating ?? 0) > ($1.testRating ?? 0)
         }
+       
         newTestArray = testArray
-        return newTestArray
     }
     
     var likedArray:[Item] {
@@ -74,17 +74,18 @@ class Model {
         }
     }
     
-    func getItemIndex(id: Int) -> Int {
-        for i in 0..<testArray.count {
-            if testArray[i].id == id {
-                return i
-            }
-        }
-        return 0
-    }
+    func search(searchTextValue: String) {
         
-    
-    
+        newTestArray = []
+        
+        if searchTextValue == "" {
+            newTestArray = testArray
+        } else {
+            newTestArray = testArray.filter({
+                $0.testTitle?.range(of: searchTextValue, options: .caseInsensitive) != nil
+            })
+        }
+    }
 }
 
 class Item {
@@ -104,4 +105,6 @@ class Item {
         self.isLiked = isLiked
     }
 }
+
+var model = Model()
 
